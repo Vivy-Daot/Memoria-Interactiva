@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://r3ptttn7gyw3"]
+
+[node name="SecondWindow" type="Control" unique_id=1720810649]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="." unique_id=1481342931]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 253.0
+offset_right = 692.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 30
+text = "Avanza, toca el tambor y luego busca y recoge las cartas.
+"
+
+[node name="Line2D" type="Line2D" parent="." unique_id=117129484]
+points = PackedVector2Array(401, 396, 612, 395, 816, 394, 660, 461, 676, 326, 814, 391)

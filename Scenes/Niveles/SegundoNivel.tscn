@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://d3sq4pal8vqu0"]
+
+[ext_resource type="PackedScene" uid="uid://cd5o5bjgimq5i" path="res://Scenes/Main_Character.tscn" id="1_2oh78"]
+[ext_resource type="PackedScene" uid="uid://c0qecb1xq4tdq" path="res://Scenes/touch_controls.tscn" id="2_xajs3"]
+[ext_resource type="Script" uid="uid://cl7xt6stutde4" path="res://Scenes/Niveles/Nivel2Generator.gd" id="3_generator"]
+[ext_resource type="PackedScene" uid="uid://dsvtg8grgeejk" path="res://Scenes/Niveles/Chunks/Chunk_Start.tscn" id="4_start"]
+[ext_resource type="PackedScene" uid="uid://cjd4h44s1t3mt" path="res://Scenes/Niveles/Chunks/Chunk_End.tscn" id="5_end"]
+[ext_resource type="PackedScene" uid="uid://dhavpb5dy0ak5" path="res://Scenes/Niveles/Chunks/Chunk_Flat.tscn" id="6_flat"]
+[ext_resource type="PackedScene" uid="uid://dxg8n6r5rrl6e" path="res://Scenes/Niveles/Chunks/Chunk_GapSmall.tscn" id="7_gapsmall"]
+[ext_resource type="PackedScene" uid="uid://ctdfg0x52ssd1" path="res://Scenes/Niveles/Chunks/Chunk_GapWide.tscn" id="8_gapwide"]
+[ext_resource type="PackedScene" uid="uid://bs06radowqvww" path="res://Scenes/Niveles/Chunks/Chunk_StairsUpDown.tscn" id="9_stairs"]
+[ext_resource type="PackedScene" uid="uid://xb07xxf0yigs" path="res://Scenes/Niveles/Chunks/Chunk_FloatingIslands.tscn" id="10_islands"]
+[ext_resource type="PackedScene" path="res://Scenes/PauseMenu.tscn" id="15_pause"]
+[ext_resource type="Texture2D" uid="uid://bnqnpm0f7hij8" path="res://Assets/Segundo Nivel/00_background.png" id="t00"]
+[ext_resource type="Texture2D" uid="uid://675rktrjwbwr" path="res://Assets/Segundo Nivel/01_sky.png" id="t01"]
+[ext_resource type="Texture2D" uid="uid://bxpmov06le7f1" path="res://Assets/Segundo Nivel/02_sky.png" id="t02"]
+[ext_resource type="Texture2D" uid="uid://d0g62q46a556i" path="res://Assets/Segundo Nivel/03_sky.png" id="t03"]
+[ext_resource type="Texture2D" uid="uid://is44xku0rcqs" path="res://Assets/Segundo Nivel/04_sky.png" id="t04"]
+[ext_resource type="Texture2D" uid="uid://bvvqv5yqjjlet" path="res://Assets/Segundo Nivel/05_mountains.png" id="t05"]
+[ext_resource type="Texture2D" uid="uid://cvgfkhbysx2tr" path="res://Assets/Segundo Nivel/06_mountain.png" id="t06"]
+[ext_resource type="Texture2D" uid="uid://7itwm08eo8nr" path="res://Assets/Segundo Nivel/07_hills.png" id="t07"]
+[ext_resource type="Texture2D" uid="uid://5a58ds5c6mls" path="res://Assets/Segundo Nivel/08_mist.png" id="t08"]
+[ext_resource type="Texture2D" uid="uid://3ewq82kr2f8g" path="res://Assets/Segundo Nivel/11_grass.png" id="t11"]
+[ext_resource type="Texture2D" uid="uid://dd6uw1lt3pjqf" path="res://Assets/Segundo Nivel/12_bonfire.png" id="t12"]
+
+[node name="SegundoNivel" type="Node2D" unique_id=665019528]
+script = ExtResource("3_generator")
+chunk_start = ExtResource("4_start")
+chunk_end = ExtResource("5_end")
+chunks_pool = Array[PackedScene]([ExtResource("6_flat"), ExtResource("7_gapsmall"), ExtResource("8_gapwide"), ExtResource("9_stairs"), ExtResource("10_islands")])
+
+[node name="CharacterBody2D" parent="." unique_id=754647645 instance=ExtResource("1_2oh78")]
+movement_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1274080957]
+offset = Vector2(0, -180)
+
+[node name="Chunks" type="Node2D" parent="." unique_id=1683193893]
+
+[node name="TouchControls" parent="." unique_id=609909207 instance=ExtResource("2_xajs3")]
+
+[node name="PauseMenu" parent="." unique_id=1617300539 instance=ExtResource("15_pause")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1136800310]
+
+[node name="Layer00" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1495149975]
+motion_scale = Vector2(0.02, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer00" unique_id=1346618047]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t00")
+
+[node name="Layer01" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1493892894]
+motion_scale = Vector2(0.05, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer01" unique_id=66871355]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t01")
+
+[node name="Layer02" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1823248247]
+motion_scale = Vector2(0.08, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer02" unique_id=1460894964]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t02")
+
+[node name="Layer03" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1800892112]
+motion_scale = Vector2(0.11, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer03" unique_id=990777121]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t03")
+
+[node name="Layer04" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1865573822]
+motion_scale = Vector2(0.14, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer04" unique_id=869764045]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t04")
+
+[node name="Layer05" type="ParallaxLayer" parent="ParallaxBackground" unique_id=825267829]
+motion_scale = Vector2(0.18, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer05" unique_id=1245892592]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t05")
+
+[node name="Layer06" type="ParallaxLayer" parent="ParallaxBackground" unique_id=448624283]
+motion_scale = Vector2(0.22, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer06" unique_id=1820391889]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t06")
+
+[node name="Layer07" type="ParallaxLayer" parent="ParallaxBackground" unique_id=717755262]
+motion_scale = Vector2(0.28, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer07" unique_id=379071627]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t07")
+
+[node name="Layer08" type="ParallaxLayer" parent="ParallaxBackground" unique_id=10995655]
+motion_scale = Vector2(0.34, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer08" unique_id=997069090]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t08")
+
+[node name="Layer11" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1361041707]
+motion_scale = Vector2(0.45, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer11" unique_id=277149169]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t11")
+
+[node name="Layer12" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1964301472]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Tex" type="TextureRect" parent="ParallaxBackground/Layer12" unique_id=2087586034]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("t12")

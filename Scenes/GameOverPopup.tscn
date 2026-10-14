@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scenes/GameOverPopup.gd" id="1_go"]
+
+[node name="GameOverPopup" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_go")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="Center" type="CenterContainer" parent="Dim"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Dim/Center"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Dim/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Perdiste"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Dim/Center/Panel/VBox"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Vuelve a intentarlo"
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Continue" type="Button" parent="Dim/Center/Panel/VBox"]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+text = "Volver al menú"

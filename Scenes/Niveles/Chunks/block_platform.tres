@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" format=3 uid="uid://cn7hqldvu4gpk"]
+
+[ext_resource type="Texture2D" uid="uid://bltkrfcytfwgr" path="res://Assets/Segundo Nivel/BlockPlatformGrass1PixelPadding.png" id="1_tex"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bp"]
+texture = ExtResource("1_tex")
+margins = Vector2i(1, 1)
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_bp")

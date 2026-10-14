@@ -1,0 +1,224 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://Scenes/IntroPopup.gd" id="1_ip"]
+[ext_resource type="Texture2D" path="res://Assets/UI/single_button_circle.png" id="2_circle"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Empty_bar.png" id="3_empty"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Red_bar_full.png" id="4_red"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Blue_bar_full.png" id="5_blue"]
+[ext_resource type="Texture2D" path="res://Assets/UI/DarkPause.png" id="7_pause"]
+[ext_resource type="Texture2D" path="res://Assets/generated/tut_arrow.png" id="8_arrow"]
+[ext_resource type="Texture2D" path="res://icon.png" id="9_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mini"]
+bg_color = Color(0.06, 0.06, 0.06, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85, 0.85, 0.9, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="IntroPopup" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_ip")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="Center" type="CenterContainer" parent="Dim"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Dim/Center"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Dim/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Movimiento"
+horizontal_alignment = 1
+
+[node name="Illustration" type="CenterContainer" parent="Dim/Center/Panel/VBox"]
+custom_minimum_size = Vector2(320, 170)
+layout_mode = 2
+
+[node name="Welcome" type="TextureRect" parent="Dim/Center/Panel/VBox/Illustration"]
+custom_minimum_size = Vector2(180, 170)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("9_icon")
+
+[node name="Joystick" type="Control" parent="Dim/Center/Panel/VBox/Illustration"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="Base" type="ColorRect" parent="Dim/Center/Panel/VBox/Illustration/Joystick"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+color = Color(1, 1, 1, 0.2)
+
+[node name="Knob" type="ColorRect" parent="Dim/Center/Panel/VBox/Illustration/Joystick"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 48.0
+offset_right = 111.0
+offset_bottom = 108.0
+color = Color(1, 1, 1, 0.6)
+
+[node name="Actions" type="HBoxContainer" parent="Dim/Center/Panel/VBox/Illustration"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Correr" type="VBoxContainer" parent="Dim/Center/Panel/VBox/Illustration/Actions"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Btn" type="TextureRect" parent="Dim/Center/Panel/VBox/Illustration/Actions/Correr"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("2_circle")
+
+[node name="Lbl" type="Label" parent="Dim/Center/Panel/VBox/Illustration/Actions/Correr"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Correr"
+horizontal_alignment = 1
+
+[node name="Saltar" type="VBoxContainer" parent="Dim/Center/Panel/VBox/Illustration/Actions"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Btn" type="TextureRect" parent="Dim/Center/Panel/VBox/Illustration/Actions/Saltar"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("2_circle")
+
+[node name="Lbl" type="Label" parent="Dim/Center/Panel/VBox/Illustration/Actions/Saltar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Saltar"
+horizontal_alignment = 1
+
+[node name="Impulso" type="VBoxContainer" parent="Dim/Center/Panel/VBox/Illustration/Actions"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Btn" type="TextureRect" parent="Dim/Center/Panel/VBox/Illustration/Actions/Impulso"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("2_circle")
+
+[node name="Lbl" type="Label" parent="Dim/Center/Panel/VBox/Illustration/Actions/Impulso"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Impulso"
+horizontal_alignment = 1
+
+[node name="Bars" type="VBoxContainer" parent="Dim/Center/Panel/VBox/Illustration"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Health" type="TextureProgressBar" parent="Dim/Center/Panel/VBox/Illustration/Bars"]
+custom_minimum_size = Vector2(260, 40)
+layout_mode = 2
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_empty")
+texture_progress = ExtResource("4_red")
+
+[node name="Stamina" type="TextureProgressBar" parent="Dim/Center/Panel/VBox/Illustration/Bars"]
+custom_minimum_size = Vector2(260, 40)
+layout_mode = 2
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_empty")
+texture_progress = ExtResource("5_blue")
+
+[node name="Minimap" type="Panel" parent="Dim/Center/Panel/VBox/Illustration"]
+custom_minimum_size = Vector2(192, 128)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mini")
+
+[node name="Shot" type="TextureRect" parent="Dim/Center/Panel/VBox/Illustration/Minimap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Pause" type="TextureRect" parent="Dim/Center/Panel/VBox/Illustration"]
+custom_minimum_size = Vector2(150, 90)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("7_pause")
+
+[node name="Arrow" type="TextureRect" parent="Dim/Center/Panel/VBox/Illustration"]
+custom_minimum_size = Vector2(220, 110)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("8_arrow")
+
+[node name="Text" type="Label" parent="Dim/Center/Panel/VBox"]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "..."
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Nav" type="HBoxContainer" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Prev" type="Button" parent="Dim/Center/Panel/VBox/Nav"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+text = "Anterior"
+
+[node name="Next" type="Button" parent="Dim/Center/Panel/VBox/Nav"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+text = "Siguiente"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="MinimapViewport" type="SubViewport" parent="."]
+size = Vector2i(180, 116)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="MinimapViewport"]
+zoom = Vector2(0.5, 0.5)

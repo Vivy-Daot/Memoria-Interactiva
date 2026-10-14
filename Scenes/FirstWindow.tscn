@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dj44yu35tx0ha"]
+
+[ext_resource type="Texture2D" uid="uid://cobv3kdkq5r5h" path="res://Plugins/icon.png" id="1_pj7dt"]
+
+[node name="FirstWindow" type="Control" unique_id=887301626]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HealthStamina" type="TextureRect" parent="." unique_id=314789890]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 24.0
+offset_right = 415.0
+offset_bottom = 189.0
+texture = ExtResource("1_pj7dt")
+
+[node name="Label" type="Label" parent="HealthStamina" unique_id=1381870386]
+layout_mode = 0
+offset_left = -153.0
+offset_top = 150.0
+offset_right = 406.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 13
+text = "Barra de roja: Indica tu salud actual. Si llega a cero, pierdes.
+
+Barra de azul: Se gasta al realizar acciones. Espera a que se recargue para volver a usarla."
+
+[node name="Pausa" type="TextureRect" parent="." unique_id=2041050787]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 494.0
+offset_right = 527.0
+offset_bottom = 622.0
+texture = ExtResource("1_pj7dt")
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="Pausa" unique_id=352366221]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -6.0
+offset_right = 77.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 13
+text = "Pon pausa al juego
+"
+
+[node name="Botones" type="TextureRect" parent="." unique_id=1672695546]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 370.0
+offset_right = 906.0
+offset_bottom = 535.0
+texture = ExtResource("1_pj7dt")
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="Botones" unique_id=1235008407]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -10.0
+offset_right = 143.0
+offset_bottom = 29.0
+theme_override_font_sizes/font_size = 13
+text = "Sirven para saltar, correr e impulsarte
+"
+
+[node name="Minimapa" type="TextureRect" parent="." unique_id=662745759]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 69.0
+offset_right = 894.0
+offset_bottom = 234.0
+texture = ExtResource("1_pj7dt")
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="Minimapa" unique_id=1338341629]
+layout_mode = 0
+offset_left = -146.0
+offset_top = 9.0
+offset_right = 151.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 13
+text = "Muestra tu posición y los alrededores del mapa"
+
+[node name="Joystick2" type="TextureRect" parent="." unique_id=1092512826]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 373.0
+offset_right = 357.0
+offset_bottom = 538.0
+texture = ExtResource("1_pj7dt")
+flip_v = true
+
+[node name="Label" type="Label" parent="Joystick2" unique_id=1852904376]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -12.0
+offset_right = 320.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 14
+text = "Muévete arrastrando este control en cualquier dirección"
