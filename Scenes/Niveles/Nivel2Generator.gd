@@ -20,8 +20,8 @@ extends Node2D
 @export var min_chunks: int = 6
 @export var max_chunks: int = 10
 
-const MAIN_MENU_SCENE := "res://Scenes/Mainmenu.tscn"
-const GAME_OVER_POPUP := preload("res://Scenes/GameOverPopup.tscn")
+const MAIN_MENU_SCENE := "res://Scenes/Menus/Mainmenu.tscn"
+const GAME_OVER_POPUP := preload("res://Scenes/Popups/GameOverPopup.tscn")
 
 ## Altura (world y) del origen del personaje cuando está de pie en el suelo
 ## (superficie en y=0). La cámara deja de bajar más allá de aquí, para no seguir

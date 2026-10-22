@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scenes/Popups/ConfirmPopup.gd" id="1_cp"]
+
+[node name="ConfirmPopup" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_cp")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="Dim"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Dim/Center"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Dim/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "¿Quieres seguir?"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Yes" type="Button" parent="Dim/Center/Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+text = "Sí"
+
+[node name="No" type="Button" parent="Dim/Center/Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+text = "No"

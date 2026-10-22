@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3sq4pal8vqu0"]
 
-[ext_resource type="PackedScene" uid="uid://cd5o5bjgimq5i" path="res://Scenes/Main_Character.tscn" id="1_2oh78"]
-[ext_resource type="PackedScene" uid="uid://c0qecb1xq4tdq" path="res://Scenes/touch_controls.tscn" id="2_xajs3"]
+[ext_resource type="PackedScene" uid="uid://cd5o5bjgimq5i" path="res://Scenes/Gameplay/Main_Character.tscn" id="1_2oh78"]
+[ext_resource type="PackedScene" uid="uid://c0qecb1xq4tdq" path="res://Scenes/UI/touch_controls.tscn" id="2_xajs3"]
 [ext_resource type="Script" uid="uid://cl7xt6stutde4" path="res://Scenes/Niveles/Nivel2Generator.gd" id="3_generator"]
 [ext_resource type="PackedScene" uid="uid://dsvtg8grgeejk" path="res://Scenes/Niveles/Chunks/Chunk_Start.tscn" id="4_start"]
 [ext_resource type="PackedScene" uid="uid://cjd4h44s1t3mt" path="res://Scenes/Niveles/Chunks/Chunk_End.tscn" id="5_end"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctdfg0x52ssd1" path="res://Scenes/Niveles/Chunks/Chunk_GapWide.tscn" id="8_gapwide"]
 [ext_resource type="PackedScene" uid="uid://bs06radowqvww" path="res://Scenes/Niveles/Chunks/Chunk_StairsUpDown.tscn" id="9_stairs"]
 [ext_resource type="PackedScene" uid="uid://xb07xxf0yigs" path="res://Scenes/Niveles/Chunks/Chunk_FloatingIslands.tscn" id="10_islands"]
-[ext_resource type="PackedScene" path="res://Scenes/PauseMenu.tscn" id="15_pause"]
+[ext_resource type="PackedScene" path="res://Scenes/Menus/PauseMenu.tscn" id="15_pause"]
 [ext_resource type="Texture2D" uid="uid://bnqnpm0f7hij8" path="res://Assets/Segundo Nivel/00_background.png" id="t00"]
 [ext_resource type="Texture2D" uid="uid://675rktrjwbwr" path="res://Assets/Segundo Nivel/01_sky.png" id="t01"]
 [ext_resource type="Texture2D" uid="uid://bxpmov06le7f1" path="res://Assets/Segundo Nivel/02_sky.png" id="t02"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scenes/Popups/Collection.gd" id="1_col"]
+[ext_resource type="PackedScene" path="res://Scenes/Popups/CardPopup.tscn" id="2_cp"]
+
+[node name="Collection" type="CanvasLayer"]
+layer = 110
+script = ExtResource("1_col")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="Center" type="CenterContainer" parent="Dim"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Dim/Center"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Dim/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Cartas"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+
+[node name="Close" type="Button" parent="Dim/Center/Panel/VBox"]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+text = "Cerrar"
+
+[node name="CardPopup" parent="." instance=ExtResource("2_cp")]

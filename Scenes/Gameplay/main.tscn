@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://cb0p2he2xj8hs"]
+
+[ext_resource type="Script" uid="uid://b3co5eqws8rbp" path="res://Scenes/Gameplay/main.gd" id="1_63852"]
+[ext_resource type="PackedScene" path="res://Scenes/Menus/PauseMenu.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://dbnxxyunlnwm8" path="res://Scenes/Niveles/LevelExit.gd" id="5_kry3j"]
+[ext_resource type="PackedScene" path="res://Scenes/Popups/IntroPopup.tscn" id="6_ipopup"]
+[ext_resource type="PackedScene" uid="uid://cd5o5bjgimq5i" path="res://Scenes/Gameplay/Main_Character.tscn" id="9_hptm8"]
+[ext_resource type="PackedScene" uid="uid://ty8h8c7rk4f4" path="res://Scenes/Niveles/BaseLevel.tscn" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://gsg7k1mof5fq" path="res://Assets/Tiles/Path_Tile.png" id="10_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://bknj1wrp2l16r" path="res://Assets/Tiles/Grass_Middle.png" id="11_6iyac"]
+[ext_resource type="Texture2D" uid="uid://ci6bom8bj1cfy" path="res://Assets/Primer Nivel/Caracoli_simplificado.png" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://c0qecb1xq4tdq" path="res://Scenes/UI/touch_controls.tscn" id="13_tcc8x"]
+[ext_resource type="Texture2D" uid="uid://dd8kiqeysli8x" path="res://Assets/generated/level_entrance_lantern_raw.png" id="14_lantern"]
+[ext_resource type="Shader" uid="uid://m2wtxxwbtepg" path="res://Scenes/Gameplay/EntranceMarker.gdshader" id="15_key_bg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ee4r6"]
+shader = ExtResource("15_key_bg")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21xkr"]
+radius = 91.26884
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdnlq"]
+texture = ExtResource("10_d1ilt")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkdf5"]
+texture = ExtResource("11_6iyac")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wsu2k"]
+sources/0 = SubResource("TileSetAtlasSource_fdnlq")
+sources/1 = SubResource("TileSetAtlasSource_jkdf5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iyac"]
+size = Vector2(70, 294.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkdf5"]
+size = Vector2(2374, 94)
+
+[node name="Root" type="Node" unique_id=82054173]
+script = ExtResource("1_63852")
+
+[node name="Nivel" parent="." unique_id=34470786 instance=ExtResource("9_ynf5e")]
+position = Vector2(-877, -682)
+tree_spacing = 5
+tree_row_spacing = 6
+path_clear_margin_horizontal = 4
+path_clear_margin_vertical = 6
+
+[node name="MainCharacter" parent="." unique_id=754647645 instance=ExtResource("9_hptm8")]
+position = Vector2(96, 297)
+
+[node name="Camera2D" type="Camera2D" parent="MainCharacter" unique_id=1483130317]
+zoom = Vector2(1.2, 1.2)
+
+[node name="TouchControls" parent="." unique_id=282735187 instance=ExtResource("13_tcc8x")]
+
+[node name="PauseMenu" parent="." unique_id=1199807559 instance=ExtResource("4_jjvhh")]
+visible = false
+
+[node name="Entrada" type="Area2D" parent="." unique_id=172932184]
+rotation = -0.2617994
+script = ExtResource("5_kry3j")
+target_scene = "res://Scenes/Niveles/SegundoNivel.tscn"
+ask_confirmation = true
+
+[node name="Lantern" type="Sprite2D" parent="Entrada" unique_id=1231021534]
+texture_filter = 1
+material = SubResource("ShaderMaterial_ee4r6")
+position = Vector2(905.029, 547.90826)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("14_lantern")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada" unique_id=1603250390]
+position = Vector2(905.029, 547.90826)
+shape = SubResource("CircleShape2D_21xkr")
+
+[node name="IntroPopup" parent="." unique_id=934041843 instance=ExtResource("6_ipopup")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1120986419]
+tile_set = SubResource("TileSet_wsu2k")
+
+[node name="Sprites2d" type="Node2D" parent="." unique_id=741970711]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites2d" unique_id=135480431]
+position = Vector2(-788, 186)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprites2d" unique_id=856807037]
+position = Vector2(-810, 455)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprites2d" unique_id=1126154075]
+position = Vector2(-809, 752)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprites2d" unique_id=1019087630]
+position = Vector2(-1048, 231)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprites2d" unique_id=498365095]
+position = Vector2(-1083, 521)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprites2d" unique_id=2066332434]
+position = Vector2(-1109, 767)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprites2d" unique_id=1180104077]
+position = Vector2(-1282, 209)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Sprites2d" unique_id=1280950630]
+position = Vector2(-1317, 530)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Sprites2d" unique_id=2006222691]
+position = Vector2(-1361, 845.00006)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Sprites2d" unique_id=167028993]
+position = Vector2(-1012, 1009)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Sprites2d" unique_id=710377382]
+position = Vector2(-957, -170)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Sprites2d" unique_id=1279878273]
+position = Vector2(-1253, -87)
+scale = Vector2(1.9954542, 1.9633332)
+texture = ExtResource("12_6iyac")
+
+[node name="Trunks" type="StaticBody2D" parent="." unique_id=216787321]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trunks" unique_id=441905546]
+position = Vector2(-857, 288.75)
+shape = SubResource("RectangleShape2D_6iyac")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=161895193]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=322468067]
+position = Vector2(245, 486)
+shape = SubResource("RectangleShape2D_jkdf5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=1485600861]
+position = Vector2(239, 99)
+shape = SubResource("RectangleShape2D_jkdf5")

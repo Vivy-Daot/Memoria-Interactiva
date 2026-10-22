@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cjd4h44s1t3mt"]
 
 [ext_resource type="Script" uid="uid://du5ja61bg1y7" path="res://Scenes/Niveles/Chunks/PlatformChunk.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://Scenes/Collectible.tscn" id="2_collectible"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameplay/Collectible.tscn" id="2_collectible"]
 [ext_resource type="TileSet" path="res://Scenes/Niveles/Chunks/block_platform.tres" id="3_tileset"]
-[ext_resource type="Script" uid="uid://cg40j1lxpnjtm" path="res://Scenes/Collectible.gd" id="4_xthuq"]
+[ext_resource type="Script" uid="uid://cg40j1lxpnjtm" path="res://Scenes/Gameplay/Collectible.gd" id="4_xthuq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(480, 32)

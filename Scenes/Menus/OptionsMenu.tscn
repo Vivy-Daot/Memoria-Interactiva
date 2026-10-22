@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scenes/Menus/OptionsMenu.gd" id="1_opt"]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_opt")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="Dim"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Dim/Center"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Dim/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Opciones"
+horizontal_alignment = 1
+
+[node name="Fullscreen" type="CheckButton" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+text = "Pantalla completa"
+
+[node name="VolRow" type="HBoxContainer" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="VolLabel" type="Label" parent="Dim/Center/Panel/VBox/VolRow"]
+layout_mode = 2
+text = "Volumen"
+
+[node name="Volume" type="HSlider" parent="Dim/Center/Panel/VBox/VolRow"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 80.0
+
+[node name="Close" type="Button" parent="Dim/Center/Panel/VBox"]
+layout_mode = 2
+text = "Cerrar"

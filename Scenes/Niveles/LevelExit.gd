@@ -13,11 +13,11 @@ extends Area2D
 ## se muestra la victoria y se vuelve al menú principal.
 @export var completes_run: bool = false
 ## Escena a la que se vuelve si el jugador rechaza la confirmación.
-@export_file("*.tscn") var reject_scene: String = "res://Scenes/main.tscn"
+@export_file("*.tscn") var reject_scene: String = "res://Scenes/Gameplay/main.tscn"
 
-const CONFIRM_POPUP := preload("res://Scenes/ConfirmPopup.tscn")
-const VICTORY_POPUP := preload("res://Scenes/VictoryPopup.tscn")
-const MAIN_MENU_SCENE := "res://Scenes/Mainmenu.tscn"
+const CONFIRM_POPUP := preload("res://Scenes/Popups/ConfirmPopup.tscn")
+const VICTORY_POPUP := preload("res://Scenes/Popups/VictoryPopup.tscn")
+const MAIN_MENU_SCENE := "res://Scenes/Menus/Mainmenu.tscn"
 
 var _busy := false
 
